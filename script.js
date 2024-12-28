@@ -87,6 +87,7 @@ function makeDefault() {
 
 
 function deleteTodo(e) {
+
     inputText.value = ''
     let element = e.target.parentElement.parentElement;
     element.remove();
@@ -106,6 +107,7 @@ function editTodo(e) {
 }
 
 function renderTodo() {
+
    const allTodoItems = todos.map(todo => {
       return ` 
             <div class="todo" data-id="${todo.id}">
@@ -119,8 +121,6 @@ function renderTodo() {
     })
 
     todoContainer.innerHTML = allTodoItems.join('');
-    container.appendChild(todoContainer);
-    // document.querySelector('.container').append(todoContainer);
     const editBtns = document.querySelectorAll('.edit_btn');
     const deleteBtns = document.querySelectorAll('.delete_btn');
     deleteBtns.forEach(deleteBtn => {
